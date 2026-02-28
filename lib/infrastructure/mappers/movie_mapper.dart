@@ -15,7 +15,8 @@ class MovieMapper {
     popularity: moviedb.popularity,
     posterPath: ( moviedb.posterPath != '')
       ? moviedb.posterPath
-      : 'https://previews.123rf.com/images/macrovector/macrovector1806/macrovector180600296/102746545-glitch-style-poster-with-404-not-found-text-on-screen-with-destruction-pixels-structure-background.jpg',
+      : 'no-poster',
+      //: 'https://previews.123rf.com/images/macrovector/macrovector1806/macrovector180600296/102746545-glitch-style-poster-with-404-not-found-text-on-screen-with-destruction-pixels-structure-background.jpg',
     releaseDate: moviedb.releaseDate,
     title: moviedb.title,
     video: moviedb.video,
