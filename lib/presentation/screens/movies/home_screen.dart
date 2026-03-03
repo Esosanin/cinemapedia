@@ -44,9 +44,12 @@ class _HomeviewState extends ConsumerState<_HomeView> {
     return Column(
       children: [
         
-        CustomAppbar(),
+        const CustomAppbar(),
+
+        MoviesSlideshow(movies: nowPlayingMovies),
 
 
+        /* Revisar si la lista de peliculas funciona 
         Expanded(
           child: ListView.builder(
             itemCount: nowPlayingMovies.length,
@@ -57,7 +60,7 @@ class _HomeviewState extends ConsumerState<_HomeView> {
               );
             },
           ),
-        )
+        ) */
       ],
     );
   }
