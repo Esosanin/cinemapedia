@@ -3,14 +3,18 @@ import 'package:cinemapedia/presentation/providers/movies/movies_repository_prov
 import 'package:flutter_riverpod/legacy.dart';
 
 final nowPlayingMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
-
   final fetchMoreMovies = ref.watch( movieRepositoryProvider ).getNowPlaying;
-
   return MoviesNotifier(
     fetchMoreMovies: fetchMoreMovies
   );
 });
 
+final popularMoviesProvider = StateNotifierProvider<MoviesNotifier, List<Movie>>((ref) {
+  final fetchMoreMovies = ref.watch( movieRepositoryProvider ).getPopular;
+  return MoviesNotifier(
+    fetchMoreMovies: fetchMoreMovies
+  );
+});
 
 
 typedef MovieCallback = Future<List<Movie>> Function({ int page });
