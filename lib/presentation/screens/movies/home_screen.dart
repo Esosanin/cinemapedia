@@ -47,63 +47,63 @@ class _HomeviewState extends ConsumerState<_HomeView> {
     final upcomingMovies = ref.watch( upcomingMoviesProvider );
     final topRatedMovies = ref.watch( topRatedMoviesProvider );
 
-    if ( slideShowMovies.isEmpty ) return CircularProgressIndicator();
+    return const FullScreenLoader();
 
-    return CustomScrollView(
-      slivers: [
+    // return CustomScrollView(
+    //   slivers: [
 
-        const SliverAppBar(
-          floating: true,
-          flexibleSpace: FlexibleSpaceBar(
-            centerTitle: true,
-            title: CustomAppbar(),
-          ),
-        ),
+    //     const SliverAppBar(
+    //       floating: true,
+    //       flexibleSpace: FlexibleSpaceBar(
+    //         centerTitle: true,
+    //         title: CustomAppbar(),
+    //       ),
+    //     ),
 
-        SliverList(delegate: SliverChildBuilderDelegate(
-          (context, index) {
-            return Column(
-              children: [
+    //     SliverList(delegate: SliverChildBuilderDelegate(
+    //       (context, index) {
+    //         return Column(
+    //           children: [
             
-                MoviesSlideshow( movies: slideShowMovies ),
+    //             MoviesSlideshow( movies: slideShowMovies ),
             
-                MoviesHorizontalListview(
-                  movies: nowPlayingMovies,
-                  title: 'En cines',
-                  subTitle: 'Lunes 20',
-                  loadNextPage: () => ref.read( nowPlayingMoviesProvider.notifier ).loadNextPage()
-                ),
+    //             MoviesHorizontalListview(
+    //               movies: nowPlayingMovies,
+    //               title: 'En cines',
+    //               subTitle: 'Lunes 20',
+    //               loadNextPage: () => ref.read( nowPlayingMoviesProvider.notifier ).loadNextPage()
+    //             ),
             
-                MoviesHorizontalListview(
-                  movies: upcomingMovies,
-                  title: 'Proximamente', 
-                  subTitle: 'En este mes',
-                  loadNextPage: () => ref.read( upcomingMoviesProvider.notifier ).loadNextPage()
-                ),
+    //             MoviesHorizontalListview(
+    //               movies: upcomingMovies,
+    //               title: 'Proximamente', 
+    //               subTitle: 'En este mes',
+    //               loadNextPage: () => ref.read( upcomingMoviesProvider.notifier ).loadNextPage()
+    //             ),
             
-                MoviesHorizontalListview(
-                  movies: popularMovies,
-                  title: 'Populares',
-                  //subTitle: '',
-                  loadNextPage: () => ref.read( popularMoviesProvider.notifier ).loadNextPage()
-                ),
+    //             MoviesHorizontalListview(
+    //               movies: popularMovies,
+    //               title: 'Populares',
+    //               //subTitle: '',
+    //               loadNextPage: () => ref.read( popularMoviesProvider.notifier ).loadNextPage()
+    //             ),
             
-                MoviesHorizontalListview(
-                  movies: topRatedMovies,
-                  title: 'Mejor calificadas',
-                  subTitle: 'Desde siempre',
-                  loadNextPage: () => ref.read( topRatedMoviesProvider.notifier ).loadNextPage()
-                ),
+    //             MoviesHorizontalListview(
+    //               movies: topRatedMovies,
+    //               title: 'Mejor calificadas',
+    //               subTitle: 'Desde siempre',
+    //               loadNextPage: () => ref.read( topRatedMoviesProvider.notifier ).loadNextPage()
+    //             ),
 
-                const SizedBox(height: 50,)
-              ],
-            );
-          },
-          childCount: 1
-        )),
+    //             const SizedBox(height: 50,)
+    //           ],
+    //         );
+    //       },
+    //       childCount: 1
+    //     )),
 
 
-      ]
-    );
+    //   ]
+    // );
   }
 }
