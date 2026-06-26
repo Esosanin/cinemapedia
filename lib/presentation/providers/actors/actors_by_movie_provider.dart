@@ -3,7 +3,7 @@ import 'package:cinemapedia/presentation/providers/actors/actors_repository_prov
 import 'package:flutter_riverpod/legacy.dart';
 
 
-final actorByMovieProvider = StateNotifierProvider<ActorMapNotifier, Map<String, List<Actor>>>((ref) {
+final actorsByMovieProvider = StateNotifierProvider<ActorMapNotifier, Map<String, List<Actor>>>((ref) {
   final actorsRepository = ref.watch( actorsRepositoryProvider );
   return ActorMapNotifier( getActors: actorsRepository.getActorsByMovie );
 });
