@@ -7,7 +7,7 @@ class MovieDetails {
     final int budget;
     final List<Genre> genres;
     final String homepage;
-    final int id;
+    final String id;
     final String imdbId;
     final List<String> originCountry;
     final String originalLanguage;
