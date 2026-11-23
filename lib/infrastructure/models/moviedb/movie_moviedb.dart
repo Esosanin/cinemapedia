@@ -3,7 +3,7 @@ class MovieMovieDB {
     final bool adult;
     final String backdropPath;
     final List<int> genreIds;
-    final int id;
+    final String id;
     final String originalLanguage;
     final String originalTitle;
     final String overview;
